@@ -1,6 +1,10 @@
-class RadioDetector:
-    def detect_radios(self):
-        raise NotImplementedError("Subclasses must implement detect_radios method")
+from abc import ABC, abstractmethod
 
-    def is_radio(self, description):
-        raise NotImplementedError("Subclasses must implement is_radio method")
+class RadioDetector(ABC):
+    @abstractmethod
+    def detect_radios(self):
+        pass
+
+    @abstractmethod
+    def is_radio(self, description: str) -> bool:
+        pass
